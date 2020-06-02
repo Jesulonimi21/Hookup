@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/commercial_home"
+    app:startDestination="@+id/commercialNavBar"
+    >
+    <fragment
+        android:id="@+id/commercialNavBar"
+        android:name="com.ambgen.naijahookup.commercial_fragments.CommercialHomeFragment"
+        android:label="CommercialNav"
+        tools:layout="@layout/fragment_commercial_home" />
+
+    <fragment
+        android:id="@+id/chattingFragment"
+        android:name="com.ambgen.naijahookup.fragments.ChattingFragment"
+        android:label="Chat"
+        tools:layout="@layout/fragment_chatting" />
+</navigation>

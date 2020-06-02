@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.ambgen.naijahookup">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".activities.SplashActivity"></activity>
+        <activity
+            android:name=".activities.StartActivity"
+            android:theme="@style/AppTheme.SplashTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activities.RegularHomeActivity"
+            android:label="@string/title_activity_regular_home"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".activities.CommercialHomeActivity"
+            android:label="@string/title_activity_commercial_home"
+            android:windowSoftInputMode="adjustResize" />
+        <activity android:name=".activities.SignInActivity" />
+        <activity android:name=".activities.RegularRegisterActivity" />
+        <activity android:name=".activities.CommercialRegisterActivity" />
+        <activity android:name=".activities.MainActivity"></activity>
+    </application>
+
+</manifest>

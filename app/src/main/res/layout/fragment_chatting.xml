@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragments.ChattingFragment">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/chatting_appbar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/colorPrimary"
+        app:layout_constraintTop_toTopOf="parent"
+        >
+
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar_settings"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_marginTop="5dp"
+                    android:id="@+id/backArrow"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_arrow_back_black_24dp"
+                    android:layout_alignParentLeft="true"
+
+                    />
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/profile"
+                    android:layout_marginBottom="10dp"
+                    android:id="@+id/chatting_img"
+                    android:layout_toRightOf="@+id/backArrow"
+                    android:layout_marginRight="20dp"
+                    />
+
+                <TextView
+                    android:id="@+id/chat_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_toRightOf="@+id/chatting_img"
+                    android:textColor="@android:color/white"
+                    android:textStyle="bold"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:textSize="15sp"
+                    android:text="Akingbesote Jesulonimi"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/chat_name"
+                    android:text="online status"
+                    android:layout_toRightOf="@+id/chatting_img"
+                    android:textColor="@android:color/white"
+                    android:textSize="13sp"
+                    android:textStyle="bold"
+                    android:id="@+id/online_status"
+                    />
+            </RelativeLayout>
+        </androidx.appcompat.widget.Toolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:id="@+id/chat_recycler"
+        android:layout_above="@+id/linear_feat"
+        app:layout_constraintTop_toBottomOf="@+id/chatting_appbar"
+        app:layout_constraintBottom_toTopOf="@+id/linear_feat"
+    />
+
+
+    <LinearLayout
+        android:id="@+id/linear_feat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="4dp"
+        android:layout_alignParentLeft="true"
+        android:orientation="vertical"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <androidx.cardview.widget.CardView
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            app:cardCornerRadius="20dp"
+            app:cardUseCompatPadding="true"
+            android:background="@android:color/white"
+            android:layout_alignParentBottom="true">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@+id/et_text"
+                    app:cardCornerRadius="5dp"
+                    android:background="#009999"
+                    android:layout_margin="5dp"
+                    android:visibility="gone"
+                    android:id="@+id/quoted_text_view"
+                    >
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+
+                        <TextView
+                            android:id="@+id/quoted_textLine"
+                            android:layout_marginLeft="4dp"
+                            android:layout_width="4dp"
+                            android:layout_height="match_parent"
+                            android:text="1"
+                            android:textSize="18sp"
+                            android:textStyle="normal"
+                            android:textColor="@android:color/holo_red_dark"
+                            android:background="@android:color/holo_red_dark"
+                            >
+                        </TextView>
+
+                        <TextView
+                            android:id="@+id/quoted_text"
+                            android:layout_width="240dp"
+                            android:layout_height="wrap_content"
+                            android:layout_above="@+id/et_text"
+                            android:background="?android:attr/colorBackground"
+                            android:padding="4dp"
+                            android:ellipsize="end"
+                            android:text="i amm m"
+                            android:textColor="@android:color/darker_gray"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            android:visibility="visible"
+                            android:maxLines="3"/>
+                        <ImageView
+
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_cancel_black_24dp"/>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/smilyImage"
+                        android:paddingTop="10dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right"
+                        android:src="@drawable/ic_insert_emoticon_black_24dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginLeft="10dp"/>
+
+
+                    <hani.momanii.supernova_emoji_library.Helper.EmojiconEditText
+                        android:textCursorDrawable="@drawable/cursor_color"
+                        android:id="@+id/edittext_chat"
+                        android:layout_width="wrap_content"
+                        android:minWidth="180dp"
+                        android:layout_height="wrap_content"
+                        android:hint="Type a message"
+                        app:backgroundTint="@android:color/white"
+                        android:layout_gravity="left"
+                        />
+
+                    <ImageView
+                        android:id="@+id/attachment"
+                        android:paddingTop="10dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right"
+                        android:src="@drawable/ic_attach_file_black_24dp"
+                       />
+
+                    <ImageView
+                        android:id="@+id/camera"
+                        android:paddingTop="10dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_camera_black_24dp"
+                        android:layout_marginLeft="7dp"
+
+                        />
+
+
+                </LinearLayout>
+                <FrameLayout
+                    android:id="@+id/containerFrag"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent">
+                </FrameLayout>
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+
+    </LinearLayout>
+
+    <ImageView
+        android:visibility="gone"
+        android:id="@+id/img_send"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_send_black_24dp"
+        android:layout_marginBottom="14dp"
+        android:background="@drawable/background_send"
+        android:padding="10dp"
+        android:scaleType="center"
+        android:layout_marginRight="5dp"
+        android:layout_toRightOf="@+id/linear_feat"
+        app:layout_constraintLeft_toRightOf="@+id/linear_feat"
+        android:layout_alignParentBottom="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+
+        />
+    <com.devlomi.record_view.RecordView
+        android:id="@+id/record_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_toLeftOf="@id/record_button"
+        app:slide_to_cancel_arrow="@drawable/recv_ic_arrow"
+        app:slide_to_cancel_arrow_color="#000000"
+        app:slide_to_cancel_bounds="8dp"
+        app:slide_to_cancel_margin_right="10dp"
+        app:slide_to_cancel_text="Slide To Cancel"
+        app:counter_time_color="#ff0000"
+        android:layout_marginBottom="14dp"
+        />
+
+
+    <com.devlomi.record_view.RecordButton
+        android:id="@+id/record_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="14dp"
+        android:background="@drawable/background_send"
+        android:padding="10dp"
+        android:scaleType="centerInside"
+        android:visibility="visible"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:mic_icon="@drawable/recv_ic_mic_white" />
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_chats">
+
+    <fragment
+        android:id="@+id/navigation_chats"
+        android:name="com.ambgen.naijahookup.commercial_fragments.chats.ChatsFragment"
+        android:label="Chats"
+        tools:layout="@layout/fragment_commercial_chats" />
+
+    <fragment
+        android:id="@+id/navigation_browse"
+        android:name="com.ambgen.naijahookup.commercial_fragments.browse.BrowseFragments"
+        android:label="Browse"
+        tools:layout="@layout/fragment_commercial_browse" />
+
+    <fragment
+        android:id="@+id/navigation_regular_notifications"
+        android:name="com.ambgen.naijahookup.commercial_fragments.notifications.NotificationsFragment"
+        android:label="@string/title_notifications"
+        tools:layout="@layout/fragment_commercial_notifications" />
+    <fragment
+        android:id="@+id/accountFragment"
+        android:name="com.ambgen.naijahookup.commercial_fragments.account.AccountFragment"
+        android:label="Account"
+        tools:layout="@layout/fragment_commercial_account" />
+
+
+</navigation>
